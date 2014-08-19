@@ -406,7 +406,11 @@ namespace Scan_API_Application
                     lblStatus.Text = Convert.ToString(e.Message.Remove(0, 37));
                     //If it returns the remote server error, show the full error message.
                     if (lblStatus.Text == "r")
+                    {
                         lblStatus.Text = e.Message;
+                        MessageBox.Show("Please make sure the Scan API is running on the selected server.", 
+                            "Error - Could not connect to API", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 strActionTaken = "";
             }
