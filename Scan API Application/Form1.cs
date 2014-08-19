@@ -404,6 +404,9 @@ namespace Scan_API_Application
                 {
                     //Show HTTP status code if an error is thrown.
                     lblStatus.Text = Convert.ToString(e.Message.Remove(0, 37));
+                    //If it returns the remote server error, show the full error message.
+                    if (lblStatus.Text == "r")
+                        lblStatus.Text = e.Message;
                 }
                 strActionTaken = "";
             }
