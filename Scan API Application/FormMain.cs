@@ -10,14 +10,13 @@ using System.Windows.Forms;
 
 using System.Net;
 using System.IO;
-using System.Runtime.Serialization.Json;
 using Newtonsoft.Json;
 
 
 namespace Scan_API_Application
 {
     
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
         //Dimension Call Variables. The Server, Port, and Function Strings combine to make the overall URL String.
         String strURL_Server;
@@ -37,7 +36,7 @@ namespace Scan_API_Application
 
         public Form frmScannerList = new FormScannerList();
 
-        public Form1()
+        public FormMain()
         {
             //Load form defaults.
             InitializeComponent();
@@ -311,8 +310,8 @@ namespace Scan_API_Application
                 lblStatus.Text = "_";
                 try
                 {
-                    objStream = webRequest.GetResponse().GetResponseStream();
-
+                    //View Scanner Settings and Start Scan currently get hung up at the below line.
+                    objStream = webRequest.GetResponse().GetResponseStream();   
                     StreamReader objReader = new StreamReader(objStream);
 
                     string sLine = "";

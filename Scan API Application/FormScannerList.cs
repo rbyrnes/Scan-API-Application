@@ -23,12 +23,12 @@ namespace Scan_API_Application
         {
             //Reset Dialog listbox.
             lstScanners.Items.Clear();
-            while (Form1.strResponse.Contains('"'))
+            while (FormMain.strResponse.Contains('"'))
             {
-                int intQuoteStartIndex = Form1.strResponse.IndexOf('"');
-                int intQuoteEndIndex = Form1.strResponse.IndexOf('"', intQuoteStartIndex + 1);
-                String strItem = Form1.strResponse.Substring(intQuoteStartIndex + 1, intQuoteEndIndex - (intQuoteStartIndex + 1));
-                Form1.strResponse = Form1.strResponse.Remove(0, intQuoteEndIndex + 1);
+                int intQuoteStartIndex = FormMain.strResponse.IndexOf('"');
+                int intQuoteEndIndex = FormMain.strResponse.IndexOf('"', intQuoteStartIndex + 1);
+                String strItem = FormMain.strResponse.Substring(intQuoteStartIndex + 1, intQuoteEndIndex - (intQuoteStartIndex + 1));
+                FormMain.strResponse = FormMain.strResponse.Remove(0, intQuoteEndIndex + 1);
                 lstScanners.Items.Add(strItem);
             }
         }
@@ -43,7 +43,7 @@ namespace Scan_API_Application
             else
             {
                 //If nothing is selected, keep the scanner setting to what it was set to.
-                strSelectedScanner = Form1.strScanner;
+                strSelectedScanner = FormMain.strScanner;
             }
             this.Close();
         }
