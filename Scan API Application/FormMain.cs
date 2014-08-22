@@ -15,7 +15,7 @@ using Newtonsoft.Json;
 
 namespace Scan_API_Application
 {
-    
+
     public partial class FormMain : Form
     {
         //Dimension Call Variables. The Server, Port, and Function Strings combine to make the overall URL String.
@@ -26,7 +26,7 @@ namespace Scan_API_Application
 
         public static String strScanner;
 
-        //Dimension Global Dictionary object.
+        //Dimension Global Dictionary objects.
         Dictionary<string, dynamic> Values = new Dictionary<string, dynamic>();
         Dictionary<string, dynamic> ScanValues = new Dictionary<string, dynamic>();
 
@@ -178,7 +178,7 @@ namespace Scan_API_Application
             }
             else
             {
-                MessageBox.Show("Please select a scanner.", "No Scanner Selected", 
+                MessageBox.Show("Please select a scanner.", "No Scanner Selected",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -225,7 +225,7 @@ namespace Scan_API_Application
                 }
             }
             else
-                MessageBox.Show("Please select a scanner before scanning.", "No scanner selected", 
+                MessageBox.Show("Please select a scanner before scanning.", "No scanner selected",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -277,7 +277,7 @@ namespace Scan_API_Application
                 if (ScanValues["Path"] != null)
                     System.Diagnostics.Process.Start(ScanValues["Path"]);
                 else
-                    MessageBox.Show("No file path was provided to access the document.", "No File Path Defined", 
+                    MessageBox.Show("No file path was provided to access the document.", "No File Path Defined",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -311,7 +311,7 @@ namespace Scan_API_Application
                 try
                 {
                     //View Scanner Settings and Start Scan currently get hung up at the below line.
-                    objStream = webRequest.GetResponse().GetResponseStream();   
+                    objStream = webRequest.GetResponse().GetResponseStream();
                     StreamReader objReader = new StreamReader(objStream);
 
                     string sLine = "";
@@ -407,7 +407,7 @@ namespace Scan_API_Application
                     if (lblStatus.Text == "r")
                     {
                         lblStatus.Text = e.Message;
-                        MessageBox.Show("Please make sure the Scan API is running on the selected server.", 
+                        MessageBox.Show("Please make sure the Scan API is running on the selected server.",
                             "Error - Could not connect to API", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }

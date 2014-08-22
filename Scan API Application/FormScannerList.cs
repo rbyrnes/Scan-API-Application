@@ -23,6 +23,7 @@ namespace Scan_API_Application
         {
             //Reset Dialog listbox.
             lstScanners.Items.Clear();
+            //Add detected scanners to the listbox.
             while (FormMain.strResponse.Contains('"'))
             {
                 int intQuoteStartIndex = FormMain.strResponse.IndexOf('"');
