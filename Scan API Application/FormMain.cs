@@ -344,7 +344,7 @@ namespace Scan_API_Application
                             frmScannerList.ShowDialog();
                             strScanner = FormScannerList.strSelectedScanner;
                             txtScanner.Text = strScanner;
-                            //Enabled/disable appropriate options.
+                            //Enable/disable appropriate options.
                             if (txtScanner.Text == "")
                             {
                                 btnViewScannerSettings.Enabled = false;
